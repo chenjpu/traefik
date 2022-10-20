@@ -255,12 +255,10 @@ func (s *Store) WatchTree(ctx context.Context, directory string, _ *store.ReadOp
 				continue
 			}
 			opts.WaitIndex = meta.LastIndex
-
 			// Return children KV pairs to the channel.
 			var kvPairs []*store.KVPair
-
 			for _, vn := range varMetas {
-				if vars, _, err := kv.Read(vn.Path, opts); err == nil {
+				if vars, _, err := kv.Read(vn.Path, nil); err == nil {
 					for k, v := range vars.Items {
 						if v == "~" {
 							v = ""
