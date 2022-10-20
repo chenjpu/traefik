@@ -31,7 +31,7 @@ require (
 	github.com/hashicorp/go-hclog v1.2.0
 	github.com/hashicorp/go-multierror v1.1.1
 	github.com/hashicorp/go-version v1.6.0
-	github.com/hashicorp/nomad/api v0.0.0-20220506174431-b5665129cd1f
+	github.com/hashicorp/nomad/api v0.0.0-20221019215708-56816f2f936d
 	github.com/influxdata/influxdb-client-go/v2 v2.7.0
 	github.com/influxdata/influxdb1-client v0.0.0-20191209144304-8bf82d3c094d
 	github.com/instana/go-sensor v1.38.3
@@ -152,7 +152,7 @@ require (
 	github.com/docker/docker-credential-helpers v0.6.4-0.20210125172408-38bea2ce277a // indirect
 	github.com/docker/go v1.5.1-1.0.20160303222718-d30aec9fd63c // indirect
 	github.com/docker/go-metrics v0.0.1 // indirect
-	github.com/docker/go-units v0.4.0 // indirect
+	github.com/docker/go-units v0.5.0 // indirect
 	github.com/donovanhide/eventsource v0.0.0-20170630084216-b8f31a59085e // indirect
 	github.com/dustin/go-humanize v1.0.0 // indirect
 	github.com/elastic/go-licenser v0.3.1 // indirect
@@ -179,7 +179,7 @@ require (
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/golang/mock v1.6.0 // indirect
 	github.com/google/btree v1.0.1 // indirect
-	github.com/google/go-cmp v0.5.8 // indirect
+	github.com/google/go-cmp v0.5.9 // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
 	github.com/google/gofuzz v1.2.0 // indirect
 	github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510 // indirect

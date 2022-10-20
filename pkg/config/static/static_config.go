@@ -2,6 +2,7 @@ package static
 
 import (
 	"fmt"
+	"github.com/traefik/traefik/v2/pkg/provider/kv/nomadVars"
 	stdlog "log"
 	"strings"
 	"time"
@@ -204,11 +205,12 @@ type Providers struct {
 	Nomad             *nomad.ProviderBuilder         `description:"Enable Nomad backend with default settings." json:"nomad,omitempty" toml:"nomad,omitempty" yaml:"nomad,omitempty" label:"allowEmpty" file:"allowEmpty" export:"true"`
 	Ecs               *ecs.Provider                  `description:"Enable AWS ECS backend with default settings." json:"ecs,omitempty" toml:"ecs,omitempty" yaml:"ecs,omitempty" label:"allowEmpty" file:"allowEmpty" export:"true"`
 
-	Consul    *consul.ProviderBuilder `description:"Enable Consul backend with default settings." json:"consul,omitempty" toml:"consul,omitempty" yaml:"consul,omitempty" label:"allowEmpty" file:"allowEmpty"  export:"true"`
-	Etcd      *etcd.Provider          `description:"Enable Etcd backend with default settings." json:"etcd,omitempty" toml:"etcd,omitempty" yaml:"etcd,omitempty" label:"allowEmpty" file:"allowEmpty" export:"true"`
-	ZooKeeper *zk.Provider            `description:"Enable ZooKeeper backend with default settings." json:"zooKeeper,omitempty" toml:"zooKeeper,omitempty" yaml:"zooKeeper,omitempty" label:"allowEmpty" file:"allowEmpty" export:"true"`
-	Redis     *redis.Provider         `description:"Enable Redis backend with default settings." json:"redis,omitempty" toml:"redis,omitempty" yaml:"redis,omitempty" label:"allowEmpty" file:"allowEmpty" export:"true"`
-	HTTP      *http.Provider          `description:"Enable HTTP backend with default settings." json:"http,omitempty" toml:"http,omitempty" yaml:"http,omitempty" label:"allowEmpty" file:"allowEmpty" export:"true"`
+	Consul    *consul.ProviderBuilder    `description:"Enable Consul backend with default settings." json:"consul,omitempty" toml:"consul,omitempty" yaml:"consul,omitempty" label:"allowEmpty" file:"allowEmpty"  export:"true"`
+	Etcd      *etcd.Provider             `description:"Enable Etcd backend with default settings." json:"etcd,omitempty" toml:"etcd,omitempty" yaml:"etcd,omitempty" label:"allowEmpty" file:"allowEmpty" export:"true"`
+	ZooKeeper *zk.Provider               `description:"Enable ZooKeeper backend with default settings." json:"zooKeeper,omitempty" toml:"zooKeeper,omitempty" yaml:"zooKeeper,omitempty" label:"allowEmpty" file:"allowEmpty" export:"true"`
+	Redis     *redis.Provider            `description:"Enable Redis backend with default settings." json:"redis,omitempty" toml:"redis,omitempty" yaml:"redis,omitempty" label:"allowEmpty" file:"allowEmpty" export:"true"`
+	HTTP      *http.Provider             `description:"Enable HTTP backend with default settings." json:"http,omitempty" toml:"http,omitempty" yaml:"http,omitempty" label:"allowEmpty" file:"allowEmpty" export:"true"`
+	NomadVars *nomadVars.ProviderBuilder `description:"Enable Nomad Vars with default settings." json:"nomadVars,omitempty" toml:"nomadVars,omitempty" yaml:"nomadVars,omitempty" label:"allowEmpty" file:"allowEmpty"  export:"true"`
 
 	Plugin map[string]PluginConf `description:"Plugins configuration." json:"plugin,omitempty" toml:"plugin,omitempty" yaml:"plugin,omitempty"`
 }
