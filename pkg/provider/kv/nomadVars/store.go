@@ -22,17 +22,6 @@ const (
 	// DefaultWatchWaitTime is how long we block for at a time to check if the watched key has changed.
 	// This affects the minimum time it takes to cancel a watch.
 	DefaultWatchWaitTime = 15 * time.Second
-
-	// RenewSessionRetryMax is the number of time we should try to renew the session before giving up and throwing an error.
-	RenewSessionRetryMax = 5
-
-	// MaxSessionDestroyAttempts is the maximum times we will try
-	// to explicitly destroy the session attached to a lock after
-	// the connectivity to the store has been lost.
-	MaxSessionDestroyAttempts = 5
-
-	// defaultLockTTL is the default ttl for the consul lock.
-	defaultLockTTL = 20 * time.Second
 )
 
 var (
