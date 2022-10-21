@@ -79,19 +79,15 @@ func (s *Store) Get(_ context.Context, key string, opts *store.ReadOptions) (*st
 	options := &api.QueryOptions{
 		AllowStale: false,
 	}
-	pair, meta, err := s.client.Variables().Read(normalize(key), options)
-	if err != nil {
-		if err.Error() == api.ErrVariableNotFound {
-			return nil, store.ErrKeyNotFound
-		} else {
-			return nil, err
-		}
-	}
-	value, err := json.Marshal(pair.Items)
+	pair, meta, err := s.client.Variables().Peek(normalize(key), options)
 	if err != nil {
 		return nil, err
 	}
-	return &store.KVPair{Key: pair.Path, Value: value, LastIndex: meta.LastIndex}, nil
+	// If pair is nil then the key does not exist.
+	if pair == nil {
+		return nil, store.ErrKeyNotFound
+	}
+	return &store.KVPair{Key: key, Value: []byte(pair.AsJSON()), LastIndex: meta.LastIndex}, nil
 }
 
 // Put a value at "key".
